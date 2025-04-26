@@ -8,6 +8,9 @@ size = Vector2(400, 15)
 [node name="Main" type="Node2D"]
 
 [node name="Platform" type="StaticBody2D" parent="."]
+position = Vector2(0, 580)
+scale = Vector2(0.3, 0.3)
+constant_linear_velocity = Vector2(0, 360)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Platform"]
 position = Vector2(0, -1)
