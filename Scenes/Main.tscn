@@ -1,9 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://cyslmwkwaqbkq"]
+[gd_scene load_steps=6 format=3 uid="uid://cyslmwkwaqbkq"]
 
 [ext_resource type="Texture2D" uid="uid://b4ldiaun2s4tc" path="res://Textures/platforma.png" id="1_r150o"]
+[ext_resource type="Texture2D" uid="uid://cwik5ws3l50kk" path="res://Textures/Postac.png" id="2_idj7w"]
+[ext_resource type="Script" uid="uid://cgxtt2wa017vt" path="res://Player/Player.gd" id="2_kln2b"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c1w88"]
-size = Vector2(400, 15)
+size = Vector2(433.333, 15)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kln2b"]
 
 [node name="Main" type="Node2D"]
 
@@ -13,9 +17,9 @@ scale = Vector2(0.3, 0.3)
 constant_linear_velocity = Vector2(0, 360)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Platform"]
-position = Vector2(560, -500)
+position = Vector2(693.333, -500)
 shape = SubResource("RectangleShape2D_c1w88")
-debug_color = Color(0.772549, 0, 0.156863, 0.94902)
+debug_color = Color(0.772549, 0, 0.156863, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="Platform"]
 position = Vector2(560, -500)
@@ -41,3 +45,14 @@ offset_bottom = 150.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(1, 1, 1, 0.0196078)
+
+[node name="Player" type="CharacterBody2D" parent="."]
+script = ExtResource("2_kln2b")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+shape = SubResource("CapsuleShape2D_kln2b")
+debug_color = Color(1, 0.0364741, 0.0496456, 0.42)
+
+[node name="Sprite2D" type="Sprite2D" parent="Player"]
+scale = Vector2(0.025, 0.025)
+texture = ExtResource("2_idj7w")
