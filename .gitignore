@@ -1,3 +1,4 @@
 .import/
 .godot/
 export.cfg
+*.gd.uid
