@@ -5,9 +5,10 @@
 [ext_resource type="Script" uid="uid://cgxtt2wa017vt" path="res://Player/Player.gd" id="2_kln2b"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c1w88"]
-size = Vector2(433.333, 15)
+size = Vector2(436.667, 50)
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kln2b"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kln2b"]
+size = Vector2(16, 16)
 
 [node name="Main" type="Node2D"]
 
@@ -16,22 +17,24 @@ position = Vector2(-330, 293)
 scale = Vector2(0.3, 0.3)
 constant_linear_velocity = Vector2(0, 360)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform"]
-position = Vector2(693.333, -500)
-shape = SubResource("RectangleShape2D_c1w88")
-debug_color = Color(0.772549, 0, 0.156863, 0)
-
 [node name="Sprite2D" type="Sprite2D" parent="Platform"]
 position = Vector2(560, -500)
 scale = Vector2(0.33, 0.109)
 texture = ExtResource("1_r150o")
 offset = Vector2(400, 15)
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform"]
+position = Vector2(690, -498.333)
+shape = SubResource("RectangleShape2D_c1w88")
+debug_color = Color(0.772549, 0, 0.156863, 0)
+
 [node name="Player" type="CharacterBody2D" parent="."]
+position = Vector2(-129, 127)
 script = ExtResource("2_kln2b")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
-shape = SubResource("CapsuleShape2D_kln2b")
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_kln2b")
 debug_color = Color(1, 0.0364741, 0.0496456, 0.42)
 
 [node name="Sprite2D" type="Sprite2D" parent="Player"]
