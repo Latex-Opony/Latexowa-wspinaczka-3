@@ -8,17 +8,36 @@ size = Vector2(400, 15)
 [node name="Main" type="Node2D"]
 
 [node name="Platform" type="StaticBody2D" parent="."]
-position = Vector2(0, 580)
+position = Vector2(-330, 293)
 scale = Vector2(0.3, 0.3)
 constant_linear_velocity = Vector2(0, 360)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Platform"]
-position = Vector2(0, -1)
+position = Vector2(560, -500)
 shape = SubResource("RectangleShape2D_c1w88")
 debug_color = Color(0.772549, 0, 0.156863, 0.94902)
 
 [node name="Sprite2D" type="Sprite2D" parent="Platform"]
-position = Vector2(305, 86)
-scale = Vector2(1.15255, 0.383789)
+position = Vector2(560, -500)
+scale = Vector2(0.33, 0.109)
 texture = ExtResource("1_r150o")
 offset = Vector2(400, 15)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(0, 1)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -150.0
+offset_right = 200.0
+offset_bottom = 150.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0.0196078)
