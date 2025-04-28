@@ -1,39 +1,20 @@
-[gd_scene load_steps=6 format=3 uid="uid://cyslmwkwaqbkq"]
+[gd_scene load_steps=5 format=3 uid="uid://cyslmwkwaqbkq"]
 
-[ext_resource type="Texture2D" uid="uid://b4ldiaun2s4tc" path="res://Textures/platforma.png" id="1_r150o"]
+[ext_resource type="Script" uid="uid://kao4vj1jqojf" path="res://Scenes/main.gd" id="1_rgh2o"]
 [ext_resource type="Texture2D" uid="uid://cwik5ws3l50kk" path="res://Textures/Postac.png" id="2_idj7w"]
 [ext_resource type="Script" uid="uid://cgxtt2wa017vt" path="res://Player/Player.gd" id="2_kln2b"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_c1w88"]
-size = Vector2(436.667, 50)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kln2b"]
-size = Vector2(16, 16)
+size = Vector2(18, 18)
 
 [node name="Main" type="Node2D"]
-
-[node name="Platform" type="StaticBody2D" parent="."]
-position = Vector2(-330, 293)
-scale = Vector2(0.3, 0.3)
-constant_linear_velocity = Vector2(0, 360)
-
-[node name="Sprite2D" type="Sprite2D" parent="Platform"]
-position = Vector2(560, -500)
-scale = Vector2(0.33, 0.109)
-texture = ExtResource("1_r150o")
-offset = Vector2(400, 15)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform"]
-position = Vector2(690, -498.333)
-shape = SubResource("RectangleShape2D_c1w88")
-debug_color = Color(0.772549, 0, 0.156863, 0)
+position = Vector2(574, 275)
+script = ExtResource("1_rgh2o")
 
 [node name="Player" type="CharacterBody2D" parent="."]
-position = Vector2(-129, 127)
 script = ExtResource("2_kln2b")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
-position = Vector2(0, 1)
 shape = SubResource("RectangleShape2D_kln2b")
 debug_color = Color(1, 0.0364741, 0.0496456, 0.42)
 
@@ -42,21 +23,22 @@ scale = Vector2(0.025, 0.025)
 texture = ExtResource("2_idj7w")
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
-position = Vector2(-1, 0)
+position = Vector2(-1, 1)
 position_smoothing_enabled = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
-anchors_preset = 8
+anchors_preset = -1
 anchor_left = 0.5
-anchor_top = 0.5
+anchor_top = 0.41
 anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -200.0
-offset_top = -150.0
-offset_right = 200.0
-offset_bottom = 150.0
+anchor_bottom = 0.41
+offset_left = -110.0
+offset_top = -145.68
+offset_right = 119.0
+offset_bottom = 169.32
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(1, 1, 1, 0.0196078)
+color = Color(0, 0.160784, 0.0352941, 0.0196078)
+metadata/_edit_use_anchors_ = true
