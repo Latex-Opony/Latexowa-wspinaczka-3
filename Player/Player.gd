@@ -21,6 +21,7 @@ func _physics_process(delta: float) -> void:
 
 	# 3) Skok
 	if Input.is_action_just_pressed("jump"):
+		print("JUMP ACTION");
 		if is_on_floor():
 			velocity.y = jump_force
 		elif is_on_wall() and can_wall_jump:
@@ -35,6 +36,6 @@ func _physics_process(delta: float) -> void:
 
 	# 5) Przesunięcie
 	move_and_slide()  # korzysta z tego.velocity
-
-	# 6) Kamera podąża pionowo
-	$Camera2D.position.y = global_position.y
+#
+	## 6) Kamera podąża pionowo
+	#$Camera2D.position.y = global_position.y
