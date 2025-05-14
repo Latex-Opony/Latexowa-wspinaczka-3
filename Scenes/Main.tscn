@@ -1,17 +1,29 @@
-[gd_scene load_steps=5 format=3 uid="uid://cyslmwkwaqbkq"]
+[gd_scene load_steps=8 format=3 uid="uid://cyslmwkwaqbkq"]
 
 [ext_resource type="Script" uid="uid://kao4vj1jqojf" path="res://Scenes/main.gd" id="1_rgh2o"]
 [ext_resource type="Texture2D" uid="uid://cwik5ws3l50kk" path="res://Textures/Postac.png" id="2_idj7w"]
 [ext_resource type="Script" uid="uid://cgxtt2wa017vt" path="res://Player/Player.gd" id="2_kln2b"]
+[ext_resource type="Texture2D" uid="uid://rqpb5lo2w1sn" path="res://assets/brick_tex.png" id="5_ec1on"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kln2b"]
 size = Vector2(18, 18)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wks23"]
+size = Vector2(72, 4086)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_00av6"]
+size = Vector2(662, 64)
 
 [node name="Main" type="Node2D"]
 position = Vector2(574, 275)
 script = ExtResource("1_rgh2o")
 
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(2.08165e-12, 2.08165e-12)
+position_smoothing_enabled = true
+
 [node name="Player" type="CharacterBody2D" parent="."]
+collision_mask = 2
 script = ExtResource("2_kln2b")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
@@ -42,3 +54,35 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0.160784, 0.0352941, 0.0196078)
 metadata/_edit_use_anchors_ = true
+
+[node name="WallRight" type="Node2D" parent="."]
+position = Vector2(360, 2.08165e-12)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="WallRight"]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WallRight/StaticBody2D"]
+shape = SubResource("RectangleShape2D_wks23")
+
+[node name="Ground" type="Node2D" parent="."]
+position = Vector2(2.08165e-12, 544)
+
+[node name="BrickTex" type="Sprite2D" parent="Ground"]
+position = Vector2(1.09537, 53.25)
+scale = Vector2(0.991329, 0.991329)
+texture = ExtResource("5_ec1on")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Ground"]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/StaticBody2D"]
+shape = SubResource("RectangleShape2D_00av6")
+
+[node name="WallLeft" type="Node2D" parent="."]
+position = Vector2(-360, 2.08165e-12)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="WallLeft"]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WallLeft/StaticBody2D"]
+shape = SubResource("RectangleShape2D_wks23")
