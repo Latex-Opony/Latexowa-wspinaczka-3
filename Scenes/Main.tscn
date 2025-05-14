@@ -1,8 +1,12 @@
 [gd_scene load_steps=8 format=3 uid="uid://cyslmwkwaqbkq"]
 
-[ext_resource type="Script" uid="uid://kao4vj1jqojf" path="res://Scenes/main.gd" id="1_rgh2o"]
+[ext_resource type="Script" path="res://Scenes/main.gd" id="1_rgh2o"]
 [ext_resource type="Texture2D" uid="uid://cwik5ws3l50kk" path="res://Textures/Postac.png" id="2_idj7w"]
+<<<<<<< HEAD
 [ext_resource type="Script" uid="uid://cgxtt2wa017vt" path="res://Player/Player.gd" id="2_kln2b"]
+=======
+[ext_resource type="Script" path="res://Player/Player.gd" id="2_kln2b"]
+>>>>>>> 3cdca431d98b08006a4ebea942b3ce67d020245a
 [ext_resource type="Texture2D" uid="uid://rqpb5lo2w1sn" path="res://assets/brick_tex.png" id="5_ec1on"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kln2b"]
